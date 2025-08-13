@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0u42ik1k4t63"]
+
+[ext_resource type="Texture2D" uid="uid://l7luc31gdqun" path="res://sprites/knight3.png" id="1_buqg6"]
+[ext_resource type="Script" path="res://scripts/knightmove.gd" id="1_uscm3"]
+
+[sub_resource type="Curve2D" id="Curve2D_fc4ff"]
+bake_interval = 0.01
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -7, 0, 0, 0, 0, 0, 5)
+}
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_6vmws"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6ouij"]
+gradient = SubResource("Gradient_6vmws")
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_x4lb1"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k0era"]
+particle_flag_disable_z = true
+directional_velocity_min = 34.3
+directional_velocity_max = 34.3
+directional_velocity_curve = SubResource("CurveXYZTexture_x4lb1")
+gravity = Vector3(20, 0, 0)
+scale_over_velocity_min = 180.85
+scale_over_velocity_max = 180.85
+color = Color(0.909804, 0.909804, 0.909804, 0.462745)
+color_ramp = SubResource("GradientTexture1D_6ouij")
+
+[node name="knight" type="Node2D"]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_fc4ff")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(0, -7)
+rotates = false
+loop = false
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Path2D/PathFollow2D"]
+script = ExtResource("1_uscm3")
+
+[node name="knight" type="Sprite2D" parent="Path2D/PathFollow2D/AnimatableBody2D"]
+scale = Vector2(0.39, 0.39)
+texture = ExtResource("1_buqg6")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Path2D/PathFollow2D/AnimatableBody2D/knight"]
+show_behind_parent = true
+amount = 7
+process_material = SubResource("ParticleProcessMaterial_k0era")
+texture = ExtResource("1_buqg6")
+speed_scale = 0.5
+interpolate = false
+local_coords = true
+trail_lifetime = 0.55
+trail_sections = 33
+trail_section_subdivisions = 9
