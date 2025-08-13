@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var speed := 100.0
 var walking:bool
 var mossy:String = "right"
+@export var still := false
 
 func _physics_process(_delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -28,11 +29,10 @@ func _physics_process(_delta):
 		mossy = "down"
 	elif directiony == -1:
 		mossy = "up"
-		
 	
-	anims(mossy)
-	
-	move_and_slide()
+	if not still:
+		move_and_slide()
+		anims(mossy)
 
 
 func anims(moss):

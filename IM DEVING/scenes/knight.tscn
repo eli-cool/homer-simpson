@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c0u42ik1k4t63"]
 
 [ext_resource type="Texture2D" uid="uid://l7luc31gdqun" path="res://sprites/knight3.png" id="1_buqg6"]
-[ext_resource type="Script" path="res://scripts/knightmove.gd" id="1_uscm3"]
+[ext_resource type="Script" uid="uid://cg8wfh4yrg2nj" path="res://scripts/knightmove.gd" id="1_uscm3"]
 
 [sub_resource type="Curve2D" id="Curve2D_fc4ff"]
 bake_interval = 0.01
