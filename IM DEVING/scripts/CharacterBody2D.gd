@@ -5,6 +5,8 @@ extends CharacterBody2D
 var walking:bool
 var mossy:String = "right"
 @export var still := false
+@onready var diolouge = $"."
+
 
 func _physics_process(_delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -33,6 +35,12 @@ func _physics_process(_delta):
 	if not still:
 		move_and_slide()
 		anims(mossy)
+		
+	if diolouge.can_speak:
+		if Input.is_action_just_pressed("+action"):
+			$"Dog-haircut".visible = not $"Dog-haircut".visible
+		else:
+			$"Dog-haircut".visible = false
 
 
 func anims(moss):

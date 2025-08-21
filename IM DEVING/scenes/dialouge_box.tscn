@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ch51o4th1n8gw"]
+[gd_scene load_steps=3 format=3 uid="uid://ch51o4th1n8gw"]
 
 [ext_resource type="Script" uid="uid://diahfy0yggqbu" path="res://scripts/dialouge_box.gd" id="1_3okig"]
-[ext_resource type="Texture2D" uid="uid://cnjkfxr20o8p4" path="res://sprites/dog-haircut.png" id="2_6lg14"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eatkt"]
 size = Vector2(365, 199)
@@ -9,10 +8,6 @@ size = Vector2(365, 199)
 [node name="dialouge box" type="Node2D"]
 scale = Vector2(1, 0.995508)
 script = ExtResource("1_3okig")
-
-[node name="Dog-haircut" type="Sprite2D" parent="."]
-scale = Vector2(1.84848, 1)
-texture = ExtResource("2_6lg14")
 
 [node name="Area2D" type="Area2D" parent="."]
 priority = 1
