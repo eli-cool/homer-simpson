@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cmpbw8nh04n58"]
+[gd_scene load_steps=8 format=3 uid="uid://cmpbw8nh04n58"]
 
 [ext_resource type="PackedScene" uid="uid://b1fuoe2ybu1lg" path="res://scenes/player.tscn" id="1_6a1uw"]
 [ext_resource type="Texture2D" uid="uid://dwrbiu6nf1nhp" path="res://sprites/snowdin.png" id="1_aihbm"]
 [ext_resource type="Texture2D" uid="uid://btgop08wrogf7" path="res://sprites/Screenshot 2025-07-31 070930.png" id="4_dssap"]
 [ext_resource type="PackedScene" uid="uid://c0u42ik1k4t63" path="res://scenes/knight.tscn" id="5_qv0an"]
 [ext_resource type="Texture2D" uid="uid://cnjkfxr20o8p4" path="res://sprites/dog-haircut.png" id="6_8cxl1"]
-[ext_resource type="PackedScene" uid="uid://ch51o4th1n8gw" path="res://scenes/dialouge_box.tscn" id="6_qfnet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a60kn"]
 texture = ExtResource("1_aihbm")
@@ -116,10 +115,6 @@ texture = ExtResource("4_dssap")
 
 [node name="player" parent="." instance=ExtResource("1_6a1uw")]
 position = Vector2(0, -13)
-
-[node name="dialouge box" parent="player" instance=ExtResource("6_qfnet")]
-position = Vector2(212, 7)
-scale = Vector2(0.863897, 0.889831)
 
 [node name="knight" parent="." instance=ExtResource("5_qv0an")]
 position = Vector2(476, -38)
