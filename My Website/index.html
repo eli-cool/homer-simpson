@@ -7,7 +7,7 @@
 
         color: white;
         font-family: monospace;
-        font-size: 19px;
+        font-size: 25px;
     }
     #body {
         margin: 0;
@@ -17,7 +17,8 @@
         background-color: rgb(63, 43, 77);
         height: fit-content;
         width: fit-content;
-        margin: auto 50px;
+        margin: auto;
+        position: relative; left: -100px; 
         padding: 15px;
     }
 
@@ -37,6 +38,7 @@
         height: fit-content;
         width: 300px;
         background-color: brown;
+        position: relative; right: -100px;
     }
     #image {
         text-align: center;
@@ -53,7 +55,7 @@
     <body>
         <div id="hello">
             <h1>kuma's Website</h1>
-            <p style="font-size: 70">i hate you, i love you, i know you,</p>
+            <p>i hate you, i love you, i know you,</p>
             <p>and yet I have so much to learn.</p>
         </div>
         <div id="w">
@@ -73,8 +75,10 @@
                 </li>
             </ul>
         </div>
-        <div id="image">
-            <img src="images/circus.png" />
-        </div>
+        <div style="width: 182px; height: 100px;
+        background-color: black; margin: 50px auto;
+                    position: relative; left: -50px;">
+  Slightly Off-Center Box of doom
+</div>
     </body>
 </html>
