@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://1cb57vijp65"]
+
+[ext_resource type="Texture2D" uid="uid://cupdyou1g1tdd" path="res://alien-cat.png" id="1_7p1mj"]
+[ext_resource type="Script" uid="uid://toca53wpdbac" path="res://enemy.gd" id="1_md0e3"]
+[ext_resource type="PackedScene" uid="uid://b4hm545h1sku5" path="res://scenes/can_be_killed.tscn" id="3_4ra3w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ra3w"]
+size = Vector2(34.758, 39.7234)
+
+[node name="enemy" type="CharacterBody2D"]
+scale = Vector2(0.604177, 0.604177)
+script = ExtResource("1_md0e3")
+
+[node name="Alien-cat" type="Sprite2D" parent="."]
+position = Vector2(0, -2.38419e-07)
+scale = Vector2(0.11245, 0.132678)
+texture = ExtResource("1_7p1mj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4ra3w")
+
+[node name="can_be_killed" parent="." instance=ExtResource("3_4ra3w")]
