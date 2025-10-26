@@ -1,9 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://b1fuoe2ybu1lg"]
+[gd_scene load_steps=20 format=3 uid="uid://b1fuoe2ybu1lg"]
 
-[ext_resource type="Script" uid="uid://bm6ue8oamm1cu" path="res://scripts/CharacterBody2D.gd" id="1_4p1fc"]
+[ext_resource type="Script" uid="uid://bi37dxjv72qfo" path="res://scripts/CharacterBody2D.gd" id="1_4p1fc"]
 [ext_resource type="Texture2D" uid="uid://d1ixjjgi0jp74" path="res://sprites/placeholder character.png" id="1_chf4w"]
 [ext_resource type="Texture2D" uid="uid://ch722rq3lbfnw" path="res://sprites/PC Computer - Undertale - Frisk2 - Copy.png" id="3_hyran"]
-[ext_resource type="PackedScene" uid="uid://ch51o4th1n8gw" path="res://scenes/dialouge_box.tscn" id="4_dqkch"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tb4v8"]
 size = Vector2(19, 23.2143)
@@ -196,9 +195,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
-size = Vector2(19, 13)
-
 [node name="player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -223,13 +219,3 @@ position_smoothing_speed = 2.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_mjrhp")
 animation = &"walk_north"
-
-[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
-position = Vector2(-0.5, 7.5)
-shape = SubResource("RectangleShape2D_qhqgy")
-
-[node name="dialouge box" parent="." instance=ExtResource("4_dqkch")]
-
-[connection signal="dialodge" from="dialouge box" to="CharacterBody2D" method="_on_dialouge_box_dialodge"]

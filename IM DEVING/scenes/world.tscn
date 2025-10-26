@@ -117,5 +117,5 @@ texture = ExtResource("4_dssap")
 position = Vector2(0, -13)
 
 [node name="knight" parent="." instance=ExtResource("5_qv0an")]
-position = Vector2(476, -38)
+position = Vector2(83, -53)
 scale = Vector2(2.825, 2.734)

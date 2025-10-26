@@ -4,9 +4,7 @@ extends CharacterBody2D
 @export var speed := 100.0
 var walking:bool
 var mossy:String = "right"
-@export var still := false
-@onready var dialodge_box := $"player/dialouge box"
-@onready var text_label = $RichTextLabel
+
 func _physics_process(_delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -30,10 +28,12 @@ func _physics_process(_delta):
 		mossy = "down"
 	elif directiony == -1:
 		mossy = "up"
+		
 	
-	if not still:
-		move_and_slide()
-		anims(mossy)
+	anims(mossy)
+	
+	move_and_slide()
+
 
 func anims(moss):
 	"hi"
@@ -58,10 +58,3 @@ func anims(moss):
 			_animated_sprite.play("walk_east")
 		else:
 			_animated_sprite.play("idle_east")
-
-func _on_dialouge_box_dialodge(num_dia: int) -> void:
-	print("texting")
-	if num_dia == 1:
-		print("text2222")
-#		text_label.text = "hello im pie"
-		dialodge_box.modulate = Color("red")
