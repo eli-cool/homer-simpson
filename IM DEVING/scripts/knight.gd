@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var knight = $Path2D/PathFollow2D/AnimatableBody2D/knight
 @onready var knight2 = preload("res://scenes/knightafimage.tscn")
-@onready var timer = $Timer
 
 func _on_timer_timeout():
 	var knight_after = knight2.instantiate()
